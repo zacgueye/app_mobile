@@ -1,27 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact App</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
-    <div class="container mt-4">
-        <div class="d-flex justify-content-between mb-4">
-            <button id="home-button" class="btn btn-primary">Home</button>
-            <button id="addContactBtn" class="btn btn-success">Ajouter Contact</button>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>Todo list</h1>
         </div>
-        <h3 class="mb-4">Liste des contacts</h3>
-        <ul id="contacts" class="list-group">
-            <!-- Les contacts seront ajoutés ici dynamiquement -->
-        </ul>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="js/app.js"></script>
+        <div role="main" class="ui-content">
+            <form>
+                <label for="task">Ajouter une tâche</label>
+                <input type="text" id="task" placeholder="Nouvelle tâche">
+                <input type="button" value="Ajouter" onClick="ajouterTache()">
+                <input type="button" value="Réinitialiser" onClick="reinitialiserTache()">
+            </form>
+            <ul id="taskList" data-role="listview" data-inset="true">
+            </ul>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h1>M2IA &copy; 2024</h1>
+        </div>
+    </div>
 </body>
 </html>
